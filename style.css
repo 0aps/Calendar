@@ -1,0 +1,77 @@
+body{
+	background: hsla(171,40%,60%,0.3);
+}
+
+#container{
+
+    width: 50%;
+	margin: 40px auto 20px auto;
+	
+	text-align: center;
+
+	border-style: groove;
+	background-color: hsla(171,50%,60%,0.5);
+	border-radius: 10px;
+	
+	font-family: sans-serif;
+	
+}
+
+table{
+	margin: 0px auto 20px auto;
+
+	text-align: right;
+    border-collapse: separate;
+    border-spacing: 20px 5px;
+}
+
+
+td{
+    border: 1px solid red;
+    height: 50px;
+    padding: 0px;
+    vertical-align: bottom;
+}
+
+td:first-child{
+	color: red;
+}
+
+.holydays {
+	font-weight: bold;
+}
+
+.unavailable{
+	border: none;
+}
+
+h1, #year{
+	margin-top: 40px;
+	display: inline;
+	border: none;
+}
+
+#year{
+	font-family: inherit;
+	font-size: 25px;
+	font-weight: bold;
+
+	outline: none;
+    background: transparent;
+    width: 70px
+}
+
+	/* Turn Off Number Input Spinners */
+	input[type=number]::-webkit-inner-spin-button, 
+	input[type=number]::-webkit-outer-spin-button { 
+	 
+	  -webkit-appearance: none; 
+	  margin: 0; 
+	}
+
+
+input[type="text"] {
+
+	margin: 20px auto 20px auto;
+	display: block;
+}
