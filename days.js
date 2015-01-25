@@ -16,6 +16,9 @@ function $(selector, all){
 			// ....
 		},
 		this.days = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
+		this.months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
+					  "Julio", "Agosto",  "Septiembre", "Octubre", "Noviembre",
+					  "Diciembre"];
 	}
 
 	_.prototype = {
@@ -166,10 +169,25 @@ $("#year").addEventListener("keyup", function(){
 
 } );
 
-$("#textBox").addEventListener("keyup", function(){
+$("#month").addEventListener("keyup", function(e){
 
-	var month = $("#textBox").value;
 	View.clear();
+	var monthL = $("#month").value,
+		index = calendar.months.indexOf(monthL);
+
+	if(e.which == 38 &&  index > -1 &&
+		index+1 < calendar.months.length){
+
+		month = index+2;
+		$("#month").value = calendar.months[index+1];
+	}else if(e.which == 40 && index > -1 &&
+		index-1 > -1){
+
+		month = index;
+		$("#month").value = calendar.months[index-1];
+	}
+
 	if(month >= 1 && month <= 12)
 		View.createView(calendar.createCalendar(month));
+
 });
